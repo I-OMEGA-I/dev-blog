@@ -9,6 +9,7 @@ import { MainPage } from "pages/MainPage";
 import { cls } from "shared/lib/classNames/cls";
 import { RouterProvider } from "./providers/RouterProvider";
 import { Navbar } from "widgets/Navbar";
+import { Sidebar } from "widgets/Sidebar";
 
 
 const App = () => {
@@ -17,7 +18,10 @@ const App = () => {
   return (
     <div className={cls('app', theme)}>
       <Navbar />
-      <RouterProvider />
+      <div className="content-page">
+        <Sidebar />
+        <RouterProvider />
+      </div>
     </div>
   );
 }
