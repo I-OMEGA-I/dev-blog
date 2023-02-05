@@ -7,6 +7,8 @@ import { useTheme } from "app/providers/ThemeProvider";
 import { AboutPage } from "pages/AboutPage";
 import { MainPage } from "pages/MainPage";
 import { cls } from "shared/lib/classNames/cls";
+import { RouterProvider } from "./providers/RouterProvider";
+import { Navbar } from "widgets/Navbar";
 
 
 const App = () => {
@@ -15,15 +17,9 @@ const App = () => {
 
   return (
     <div className={cls('app', theme)}>
-      <Link to={'/'}>Main Page</Link>
-      <Link to={'/about'}>About Page</Link>
+      <Navbar />
+      <RouterProvider />
       <button onClick={toggleTheme}>Toggle Theme</button>
-      <Suspense fallback={<div>Loading...</div>}>
-        <Routes>
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/" element={<MainPage />} />
-        </Routes>
-      </Suspense>
     </div>
   );
 }

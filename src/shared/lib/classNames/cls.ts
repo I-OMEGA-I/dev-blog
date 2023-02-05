@@ -12,5 +12,3 @@ export function cls(...values: Array<String | Record<string, boolean | string>>)
     return acc;
   }, []).join(' ');
 }
-
-console.log(cls("test1", {foo: true, bar: true}, "test2",  {foobar: false}))
