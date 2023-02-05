@@ -3,6 +3,13 @@
     "title": {
       "main": "Main Page",
       "about": "About Page"
+    },
+    "nav": {
+      "main": "Main",
+      "about": "About"      
+    },
+    "btn": {
+      "toggle": "Toggle"
     }
   },
   "lang": "English"

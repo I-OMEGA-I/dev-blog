@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { cls } from 'shared/lib/classNames/cls';
 import { AppLink } from 'shared/ui/AppLink';
@@ -9,16 +10,20 @@ interface NavbarProps {
   className?: string;
 }
 
-export const Navbar = ({ className }: NavbarProps) => (
-    <div className={cls(classes.Navbar)}>
-        <div />
-        <div className={cls(classes.links)}>
-            <AppLink to="/" theme={AppLinkTheme.SECONDARY}>
-                Main
-            </AppLink>
-            <AppLink to="/about" theme={AppLinkTheme.SECONDARY}>
-                About
-            </AppLink>
+export const Navbar = ({ className }: NavbarProps) => {
+    const { t } = useTranslation();
+
+    return (
+        <div className={cls(classes.Navbar)}>
+            <div />
+            <div className={cls(classes.links)}>
+                <AppLink to="/" theme={AppLinkTheme.SECONDARY}>
+                    {`${t('page.nav.main')}`}
+                </AppLink>
+                <AppLink to="/about" theme={AppLinkTheme.SECONDARY}>
+                    {`${t('page.nav.about')}`}
+                </AppLink>
+            </div>
         </div>
-    </div>
-);
+    );
+};
