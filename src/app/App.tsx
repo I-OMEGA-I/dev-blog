@@ -1,29 +1,25 @@
-
-import { Suspense } from "react";
-import { Link } from "react-router-dom";
-import { Route, Routes } from "react-router-dom";
-import './styles/index.scss'
-import { useTheme } from "app/providers/ThemeProvider";
-import { AboutPage } from "pages/AboutPage";
-import { MainPage } from "pages/MainPage";
-import { cls } from "shared/lib/classNames/cls";
-import { RouterProvider } from "./providers/RouterProvider";
-import { Navbar } from "widgets/Navbar";
-import { Sidebar } from "widgets/Sidebar";
-
+import { Suspense } from 'react';
+import './styles/index.scss';
+import { useTheme } from 'app/providers/ThemeProvider';
+import { cls } from 'shared/lib/classNames/cls';
+import { Navbar } from 'widgets/Navbar';
+import { Sidebar } from 'widgets/Sidebar';
+import { RouterProvider } from './providers/RouterProvider';
 
 const App = () => {
-  const { theme } = useTheme();
+    const { theme } = useTheme();
 
-  return (
-    <div className={cls('app', theme)}>
-      <Navbar />
-      <div className="content-page">
-        <Sidebar />
-        <RouterProvider />
-      </div>
-    </div>
-  );
-}
+    return (
+        <div className={cls('app', theme)}>
+            <Suspense fallback="">
+                <Navbar />
+                <div className="content-page">
+                    <Sidebar />
+                    <RouterProvider />
+                </div>
+            </Suspense>
+        </div>
+    );
+};
 
 export default App;
