@@ -13,5 +13,8 @@
     }
   },
   "not found": "Page Not Found",
+  "error": "Some error was found! try again later",
+  "reload": "Reload",
+  "bugbtn": "Error",
   "lang": "English"
 }
