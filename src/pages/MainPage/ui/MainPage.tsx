@@ -1,5 +1,5 @@
+import { BugButton } from 'app/providers/ErrorBoundaryProvider/ui/BugButton';
 import { useTranslation } from 'react-i18next';
-import { BugButton } from 'widgets/PageError/ui/BugButton/BugButton';
 
 const MainPage = () => {
     const { t } = useTranslation();
