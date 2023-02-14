@@ -22,7 +22,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
             data-testid="sidebar"
             className={cls(classes.Sidebar, {
                 [classes.collapsed]: collapsed,
-            })}
+            }, className)}
         >
             <button
                 data-testid="sidebar-toggle"
