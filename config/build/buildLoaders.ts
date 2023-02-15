@@ -1,5 +1,6 @@
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { RuleSetRule } from 'webpack';
+import buildCssLoader from './loaders/buildCssLoader';
 import { BuildOptions } from './types/config';
 
 export function buildLoaders(options: BuildOptions): RuleSetRule[] {
@@ -21,24 +22,6 @@ export function buildLoaders(options: BuildOptions): RuleSetRule[] {
             use: 'ts-loader',
             exclude: /node_modules/,
         },
-        {
-            test: /\.s[ac]ss$/i,
-            use: [
-                // Creates `style` nodes from JS strings
-                options.isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
-                // Translates CSS into CommonJS
-                {
-                    loader: 'css-loader',
-                    options: {
-                        modules: {
-                            auto: (path: string) => path.includes('.module.'),
-                            localIdentName: options.isDev ? '[path][name]__[local]' : '[hash:base64:8]',
-                        },
-                    },
-                },
-                // Compiles Sass to CSS
-                'sass-loader',
-            ],
-        },
+        buildCssLoader(options.isDev),
     ];
 }

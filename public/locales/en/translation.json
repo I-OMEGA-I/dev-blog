@@ -7,11 +7,9 @@
     "nav": {
       "main": "Main",
       "about": "About"      
-    },
-    "btn": {
-      "toggle": "Toggle"
     }
   },
+  "toggle": "Toggle",
   "not found": "Page Not Found",
   "error": "Some error was found! try again later",
   "reload": "Reload",
