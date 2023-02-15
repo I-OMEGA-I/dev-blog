@@ -40,6 +40,7 @@ module.exports = {
         'no-undef': 'off',
         'i18next/no-literal-string': ['error', {
             markupOnly: true,
+            ignoreAttribute: ['to'],
         }],
         'max-len': ['error', {
             ignoreComments: true,
