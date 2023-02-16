@@ -16,14 +16,7 @@ export const Navbar = ({ className }: NavbarProps) => {
     return (
         <div className={cls(classes.Navbar)}>
             <div />
-            <div className={cls(classes.links)}>
-                <AppLink to="/" theme={AppLinkTheme.SECONDARY}>
-                    {`${t('page.nav.main')}`}
-                </AppLink>
-                <AppLink to="/about" theme={AppLinkTheme.SECONDARY}>
-                    {`${t('page.nav.about')}`}
-                </AppLink>
-            </div>
+            <div className={cls(classes.links)} />
         </div>
     );
 };

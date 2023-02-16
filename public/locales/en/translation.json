@@ -14,5 +14,6 @@
   "error": "Some error was found! try again later",
   "reload": "Reload",
   "bugbtn": "Error",
-  "lang": "English"
+  "lang": "English",
+  "lang-short": "Eng"
 }
