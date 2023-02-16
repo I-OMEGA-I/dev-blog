@@ -3,6 +3,12 @@
 @import "themes/dark";
 @import "themes/light";
 
+@font-face {
+    font-family: FiraGO;
+    src: url("../../shared/assets/font/FiraGO-Regular.otf");
+    font-weight: normal;
+}
+
 .app {
     font: var(--font-m);
     background: var(--bg-color);

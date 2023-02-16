@@ -27,9 +27,11 @@
 }
 
 .link {
-    display: flex;
-    align-items: center;
     margin-top: 10px;
+    overflow: hidden;
+    white-space: nowrap;
+    display: flex;
+    color: var(--inverted-primary-color);
 
     & > span {
         opacity: 1;
@@ -56,6 +58,8 @@
     .link > span {
         opacity: 0;
         width: 0;
+        max-width: 0;
+        min-width: 0;
     }
 }
 
