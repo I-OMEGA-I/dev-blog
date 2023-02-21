@@ -4,12 +4,13 @@
     background: var(--inverted-bg-color);
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
     padding: 20px;
 }
 
 .links {
     margin-right: 15px;
+    color: var(--inverted-primary-color);
 
     & > a {
         margin: 0 10px;
