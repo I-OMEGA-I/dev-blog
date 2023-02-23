@@ -1,14 +1,10 @@
 /* eslint-disable max-len */
+import { LoginModal } from 'features/AuthByUsername';
 import { useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
 import { cls } from 'shared/lib/classNames/cls';
-import { AppLink } from 'shared/ui/AppLink';
-import { AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { Button } from 'shared/ui/Button';
 import { ButtonTheme } from 'shared/ui/Button/Button';
-import { Modal } from 'shared/ui/Modal/Modal';
-import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
 import classes from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -20,8 +16,12 @@ export const Navbar = ({ className }: NavbarProps) => {
 
     const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
 
-    const onToggleModal = useCallback(() => {
-        setIsAuthModalOpen((prev) => !prev);
+    const onAuthModalClose = useCallback(() => {
+        setIsAuthModalOpen(false);
+    }, []);
+
+    const onAuthModalOpen = useCallback(() => {
+        setIsAuthModalOpen(true);
     }, []);
 
     return (
@@ -29,13 +29,14 @@ export const Navbar = ({ className }: NavbarProps) => {
             <Button
                 theme={ButtonTheme.CLEAN}
                 className={cls(classes.links)}
-                onClick={onToggleModal}
+                onClick={onAuthModalOpen}
             >
                 {t('Sign in')}
             </Button>
-            <Modal isOpen={isAuthModalOpen} onClose={onToggleModal}>
-                {t('Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit, corporis tenetur eum soluta, rerum reprehenderit animi saepe omnis accusantium, magni laborum officia fugiat?')}
-            </Modal>
+            <LoginModal
+                isOpen={isAuthModalOpen}
+                onClose={onAuthModalClose}
+            />
         </div>
     );
 };
