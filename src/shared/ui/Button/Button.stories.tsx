@@ -114,3 +114,11 @@ BackgroundSquaredXLDark.args = {
     squared: true,
 };
 BackgroundSquaredXLDark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const Disabled = Template.bind({});
+Disabled.args = {
+    children: '>',
+    theme: ButtonTheme.OUTLINE,
+    disabled: true,
+};
+Disabled.decorators = [ThemeDecorator(Theme.DARK)];

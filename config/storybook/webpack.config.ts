@@ -1,5 +1,5 @@
 import path from 'path';
-import { Configuration, RuleSetRule } from 'webpack';
+import { Configuration, DefinePlugin, RuleSetRule } from 'webpack';
 import buildCssLoader from '../build/loaders/buildCssLoader';
 
 export default ({ config }: {config: Configuration}) => {
@@ -19,5 +19,11 @@ export default ({ config }: {config: Configuration}) => {
     });
     config.resolve.modules.push(srcPath);
     config.resolve.extensions.push('.ts', '.tsx');
+    config.plugins.push(new DefinePlugin({ __IS_DEV__: true }));
+    config.resolve.modules = [
+        path.resolve(__dirname, '../../src'),
+        'node_modules',
+    ];
+
     return config;
 };

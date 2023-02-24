@@ -12,9 +12,13 @@
   "toggle": "Toggle",
   "not found": "Page Not Found",
   "error": "Some error was found! try again later",
+  "auth error": "Wrong username or password",
   "reload": "Reload",
   "bugbtn": "Error",
   "lang": "English",
   "lang-short": "Eng",
-  "Sign in": "Sign In"
+  "Username": "Username",
+  "Password": "Password",
+  "Sign in": "Sign In",
+  "Sign out": "Sign out"
 }
