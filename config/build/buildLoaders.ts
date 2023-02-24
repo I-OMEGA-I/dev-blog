@@ -1,4 +1,3 @@
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { RuleSetRule } from 'webpack';
 import buildCssLoader from './loaders/buildCssLoader';
 import { BuildOptions } from './types/config';
