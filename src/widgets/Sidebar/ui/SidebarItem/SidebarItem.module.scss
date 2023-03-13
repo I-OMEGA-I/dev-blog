@@ -1,0 +1,26 @@
+.link {
+    margin-top: 10px;
+    overflow: hidden;
+    white-space: nowrap;
+    display: flex;
+    color: var(--inverted-primary-color);
+
+    & > span {
+        opacity: 1;
+        margin-left: 10px;
+        transition: 0.2s opacity;
+    }
+}
+
+.icon {
+    fill: var(--inverted-primary-color);
+}
+
+.collapsed {
+    .link > span {
+        opacity: 0;
+        width: 0;
+        max-width: 0;
+        min-width: 0;
+    }
+}
